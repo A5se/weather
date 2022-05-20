@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+    <script src="eel.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Privet</h1>
+    <input id = "location" type="text" placeholder="Введите название города, страны" required="" value="Нью-Йорк, США">
+    <button id="show">Узнать погоду</button>
+    <div id="info">
+
+   
+
+    <script type="text/javascript">
+        async function display_weather(){
+            let place = document.getElementById('location').value;
+
+            let res = await eel.get_weather(place)();
+
+            document.getElementById('info').innerHTML = res;
+        }
+        jQuery('#show').on('click', function(){
+            display_weather();
+        });
+    </script>
+     </div>
+</body>
+</html>
